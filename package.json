@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production --stats-error-details false",
-    "start": "webpack serve"
+    "start": "webpack serve --open",
+    "debug": "webpack serve --no-open"
   },
   "repository": {
     "type": "git",
