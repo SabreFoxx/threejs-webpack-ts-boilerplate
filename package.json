@@ -1,0 +1,39 @@
+{
+  "name": "reloadly-snackman",
+  "version": "0.0.0",
+  "description": "Screensaver for the reloadly dashboard",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production --stats-error-details false",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SabreFoxx/reloadly-snackman.git"
+  },
+  "keywords": [
+    "reloadly",
+    "screensaver",
+    "three.js"
+  ],
+  "author": "Gerald Nnebe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SabreFoxx/reloadly-snackman/issues"
+  },
+  "homepage": "https://github.com/SabreFoxx/reloadly-snackman#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.1",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.3",
+    "ts-shader-loader": "^2.0.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
