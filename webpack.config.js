@@ -1,12 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'development',
     context: __dirname,
     entry: {
-        app: path.resolve(__dirname, '/src/index.ts'),
+        app: path.resolve(__dirname, '/src/main.ts'),
         fpsCounter: path.resolve(__dirname, '/src/fps.ts'),
     },
     output: {
@@ -54,6 +55,22 @@ module.exports = {
         extensions: ['.js', '.ts', '.glsl', '.json', '.scss'],
         modules: [path.join(__dirname, 'src'), path.join(__dirname, 'node_modules')]
     },
+    // tree shaking
+    optimization: {
+        usedExports: true,
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+                terserOptions: {
+                    compress: true,
+                    mangle: true,
+                    keep_fnames: false,
+                    keep_classnames: false
+                }
+            })
+        ]
+    },
     stats: { errorDetails: true },
-	// devtool: 'source-map', // outcomment if tsconfig source map didn't work
+    // devtool: 'source-map', // outcomment if tsconfig source map didn't work
 }

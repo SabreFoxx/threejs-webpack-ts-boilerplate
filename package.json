@@ -2,7 +2,7 @@
   "name": "reloadly-snackman",
   "version": "0.0.0",
   "description": "Screensaver for the reloadly dashboard",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
     "build": "webpack --mode production --stats-error-details false",
     "start": "webpack serve --open",
@@ -23,7 +23,11 @@
     "url": "https://github.com/SabreFoxx/reloadly-snackman/issues"
   },
   "homepage": "https://github.com/SabreFoxx/reloadly-snackman#readme",
+  "dependencies": {
+    "three": "^0.152.2"
+  },
   "devDependencies": {
+    "@types/three": "^0.152.1",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
     "copy-webpack-plugin": "^11.0.0",
@@ -33,6 +37,7 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
     "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
     "ts-loader": "^9.4.3",
     "ts-shader-loader": "^2.0.2",
     "typescript": "^5.0.4",

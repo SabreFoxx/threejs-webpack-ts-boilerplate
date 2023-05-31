@@ -1,6 +1,7 @@
-import { string1 } from "./app/ts";
+import { start } from 'app/setup';
 import glsl from './shaders/mascot.frag.glsl';
 // import './styles/style.scss';
 
-console.log(string1);
+start();
+
 console.log(glsl);

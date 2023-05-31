@@ -14,7 +14,7 @@
                 "webpack:///./src/*": "${webRoot}/*",
             },
             // outcomment below to trace in case the above doesn't work
-            "trace": "verbose"
+            // "trace": "verbose"
         }
     ]
 }
