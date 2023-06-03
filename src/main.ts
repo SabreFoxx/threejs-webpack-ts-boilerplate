@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { SnackMan } from 'app/snackman';
 import glsl from 'shaders/mascot.frag.glsl';
 import 'styles/style.scss';

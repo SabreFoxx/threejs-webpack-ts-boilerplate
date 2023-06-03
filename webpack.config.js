@@ -9,11 +9,12 @@ module.exports = {
     context: __dirname,
     entry: {
         app: path.resolve(__dirname, '/src/main.ts'),
-        fpsCounter: path.resolve(__dirname, '/src/fps.ts'),
+        utils: path.resolve(__dirname, '/src/utils.ts'),
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
+        sourceMapFilename: '[name].[contenthash].js.map',
         publicPath: '/',
         clean: true
     },
@@ -71,5 +72,5 @@ module.exports = {
         ]
     },
     stats: { errorDetails: true },
-    // devtool: 'source-map', // outcomment if tsconfig source map didn't work
+    devtool: 'source-map',
 }
