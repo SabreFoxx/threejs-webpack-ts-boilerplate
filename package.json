@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/SabreFoxx/reloadly-snackman#readme",
   "dependencies": {
+    "inversify": "^6.0.1",
+    "reflect-metadata": "^0.1.13",
+    "scss-reset": "^1.4.2",
     "three": "^0.152.2"
   },
   "devDependencies": {
@@ -43,6 +46,7 @@
     "typescript": "^5.0.4",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1",
-    "webpack-dev-server": "^4.15.0"
+    "webpack-dev-server": "^4.15.0",
+    "webpack-obfuscator": "^3.5.1"
   }
 }

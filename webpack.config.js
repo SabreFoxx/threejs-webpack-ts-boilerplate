@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+// const JavaScriptObfuscator = require('webpack-obfuscator');
 
 module.exports = {
     mode: 'development',
@@ -49,25 +50,23 @@ module.exports = {
             patterns: [
                 { from: "src/assets", to: "assets" },
             ]
-        })
+        }),
+        // new JavaScriptObfuscator({
+        //     rotateUnicodeArray: true
+        // }, ['app.[contenthash].js'])
     ],
     resolve: {
         extensions: ['.js', '.ts', '.glsl', '.json', '.scss'],
         modules: [path.join(__dirname, 'src'), path.join(__dirname, 'node_modules')]
     },
-    // tree shaking
     optimization: {
         usedExports: true,
         minimize: true,
         minimizer: [
             new TerserPlugin({
                 parallel: true,
-                terserOptions: {
-                    compress: true,
-                    mangle: true,
-                    keep_fnames: false,
-                    keep_classnames: false
-                }
+                // see https://github.com/terser/terser for options
+                terserOptions: { compress: true, mangle: true }
             })
         ]
     },
