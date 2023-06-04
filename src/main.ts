@@ -4,5 +4,4 @@ import { SnackMan } from 'app/snackman';
 import 'styles/style.scss';
 
 customElements.define('reloadly-snackman', SnackMan);
-console.log(glsl);
 

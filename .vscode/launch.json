@@ -9,12 +9,7 @@
             "url": "http://localhost:5000",
             "webRoot": "${workspaceFolder}/src",
             "port": 4040,
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "webpack:///./src/*": "${webRoot}/*",
-            },
-            // outcomment below to trace in case the above doesn't work
-            // "trace": "verbose"
+            "sourceMaps": true
         }
     ]
 }

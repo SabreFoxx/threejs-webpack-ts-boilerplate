@@ -6,10 +6,10 @@ const JavaScriptObfuscator = require('webpack-obfuscator');
 
 module.exports = {
     mode: 'development',
-    context: __dirname,
+    context: path.resolve(__dirname, 'src'),
     entry: {
-        app: path.resolve(__dirname, '/src/main.ts'),
-        utils: path.resolve(__dirname, '/src/utils.ts'),
+        app: 'main.ts',
+        utils: 'utils.ts'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -45,11 +45,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Snackman',
-            filename: 'index.html', template: 'src/app.html'
+            filename: 'index.html', template: 'app.html'
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: "src/assets", to: "assets" },
+                { from: "assets", to: "assets" },
             ]
         }),
         // new JavaScriptObfuscator({

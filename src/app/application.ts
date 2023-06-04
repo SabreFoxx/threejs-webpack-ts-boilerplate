@@ -11,6 +11,7 @@ import { Injectable, ReflectiveInjector } from "injection-js";
 import { SnackMan } from "./snackman";
 
 const fov = 75, aspect = 2, near = 0.1, far = 5;
+const customPixelRatio = 1.5;
 
 @Injectable()
 export class Application {
@@ -21,8 +22,8 @@ export class Application {
     private cube: Mesh;
 
     constructor(private renderer: WebGLRenderer) {
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.scene = new Scene();
+        console.error('err')
         this.camera = new PerspectiveCamera(fov, aspect, near, far);
 
         const geometry = new BoxGeometry(1, 1, 1);
@@ -40,7 +41,11 @@ export class Application {
     setHtmlElement(el: SnackMan): void {
         this.htmlElement = el;
         this.canvas = this.htmlElement.canvas;
-        this.renderer.setSize(this.htmlElement.clientWidth, this.htmlElement.clientHeight);
+        this.renderer.setSize(
+            this.htmlElement.clientWidth * customPixelRatio,
+            this.htmlElement.clientHeight * customPixelRatio,
+            false
+        );
     }
 
     startRendering(): void {
@@ -50,10 +55,10 @@ export class Application {
     }
 
     resizeRendererToCanvasSize = (): boolean => {
-        const clientWidth = this.htmlElement.clientWidth;
-        const clientHeight = this.htmlElement.clientHeight;
+        const clientWidth = this.htmlElement.clientWidth * customPixelRatio;
+        const clientHeight = this.htmlElement.clientHeight * customPixelRatio;
         const needsResize = this.canvas.width !== clientWidth || this.canvas.height !== clientHeight;
-        if (needsResize) this.renderer.setSize(clientWidth, clientHeight);
+        if (needsResize) this.renderer.setSize(clientWidth, clientHeight, false);
         return needsResize;
     }
 
