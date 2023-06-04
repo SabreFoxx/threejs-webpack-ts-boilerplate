@@ -1,6 +1,4 @@
-import { Application, initApplication } from "./application";
-import { ReflectiveInjector } from 'injection-js';
-import { WebGLRenderer } from 'three';
+import { initApplication, registerProviders } from "./application";
 
 export class SnackMan extends HTMLElement {
     canvas: HTMLCanvasElement;
@@ -22,16 +20,7 @@ export class SnackMan extends HTMLElement {
     }
 
     connectedCallback() {
-        const injector = ReflectiveInjector.resolveAndCreate([
-            { provide: HTMLCanvasElement, useValue: this.canvas },
-            {
-                provide: WebGLRenderer,
-                deps: [HTMLCanvasElement],
-                useFactory(canvas: HTMLCanvasElement) {
-                    return new WebGLRenderer({ antialias: true, alpha: true, canvas });
-                }
-            }, Application
-        ]);
+        const injector = registerProviders({ canvas: this.canvas });
         initApplication(injector, this);
     }
 }

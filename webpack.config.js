@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-// const JavaScriptObfuscator = require('webpack-obfuscator');
+const JavaScriptObfuscator = require('webpack-obfuscator');
 
 module.exports = {
     mode: 'development',
@@ -72,5 +72,5 @@ module.exports = {
         ]
     },
     stats: { errorDetails: true },
-    devtool: 'source-map',
+    devtool: 'eval-source-map' // see https://webpack.js.org/configuration/devtool/
 }

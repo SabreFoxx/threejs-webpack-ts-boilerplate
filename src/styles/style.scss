@@ -1,4 +1,5 @@
 @use 'scss-reset/reset';
+@use './_typography';
 
 $bgcolor: rgba(230, 186, 173, 0.493);
 $textcolor: darkblue;
@@ -9,7 +10,8 @@ body {
 }
 
 reloadly-snackman {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: block;
+    position: relative;
 }
