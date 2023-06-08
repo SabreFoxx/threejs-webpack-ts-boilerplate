@@ -1,4 +1,3 @@
-
 import Stats from "stats.js";
 
 const stats = new Stats();

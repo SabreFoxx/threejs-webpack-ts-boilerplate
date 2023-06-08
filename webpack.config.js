@@ -58,7 +58,11 @@ module.exports = {
     ],
     resolve: {
         extensions: ['.js', '.ts', '.glsl', '.json', '.scss'],
-        modules: [path.join(__dirname, 'src'), path.join(__dirname, 'node_modules')]
+        modules: [path.join(__dirname, 'src'), path.join(__dirname, 'node_modules')],
+        alias: {
+            // specify specific exports file; useful for tree shaking exports if you customize it
+            three: path.join(__dirname, 'node_modules/three/src/Three.js'),
+        }
     },
     optimization: {
         usedExports: true,
@@ -67,7 +71,15 @@ module.exports = {
             new TerserPlugin({
                 parallel: true,
                 // see https://github.com/terser/terser for options
-                terserOptions: { compress: true, mangle: true }
+                terserOptions: {
+                    compress: { drop_console: true, ecma: 2016, passes: 2, module: true },
+                    mangle: {
+                        module: true, properties: {
+                            keep_quoted: true,
+                            regex: /^_/ // private properties that begin with _
+                        }
+                    }
+                }
             })
         ]
     },

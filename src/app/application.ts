@@ -23,7 +23,6 @@ export class Application {
 
     constructor(private renderer: WebGLRenderer) {
         this.scene = new Scene();
-        console.error('err')
         this.camera = new PerspectiveCamera(fov, aspect, near, far);
 
         const geometry = new BoxGeometry(1, 1, 1);
