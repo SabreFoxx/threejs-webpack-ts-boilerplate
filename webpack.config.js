@@ -74,9 +74,10 @@ module.exports = {
                 terserOptions: {
                     compress: { drop_console: true, ecma: 2016, passes: 2, module: true },
                     mangle: {
-                        module: true, properties: {
-                            keep_quoted: true,
-                            regex: /^_/ // private properties that begin with _
+                        module: true,
+                        properties: {
+                            keep_quoted: 'strict',
+                            regex: /^_[A-Za-z0-9]+/ // private properties that begin with _
                         }
                     }
                 }
