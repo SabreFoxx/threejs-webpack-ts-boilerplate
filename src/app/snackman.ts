@@ -15,7 +15,7 @@ export class SnackMan extends HTMLElement {
             this.shadowRoot.appendChild(style);
             this.shadowRoot.appendChild(this.canvas);
         } else {
-            console.error('Could not init <reloadly-snackman>');
+            console.error('Could not init <threejs-webpack-ts-boilerplate>');
         }
     }
 

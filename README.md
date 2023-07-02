@@ -1,2 +1,2 @@
-# reloadly-snackman
-Screensaver for the reloadly dashboard
+# threejs-webpack-ts-boilerplate
+Template for setting up a threejs ts project

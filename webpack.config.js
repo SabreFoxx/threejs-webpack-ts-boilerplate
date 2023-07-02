@@ -77,7 +77,7 @@ module.exports = {
                         module: true,
                         properties: {
                             keep_quoted: 'strict',
-                            regex: /^_/ // private properties that begin with _
+                            regex: /_$/ // private properties that ending with _
                         }
                     }
                 }

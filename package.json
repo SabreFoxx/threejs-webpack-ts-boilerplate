@@ -1,7 +1,7 @@
 {
-  "name": "reloadly-snackman",
+  "name": "threejs-webpack-ts-boilerplate",
   "version": "0.0.0",
-  "description": "Screensaver for the reloadly dashboard",
+  "description": "Template for setting up a threejs ts project",
   "main": "main.ts",
   "scripts": {
     "build": "webpack --mode production --devtool false",
@@ -10,25 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/SabreFoxx/reloadly-snackman.git"
+    "url": "git+ssh://git@github.com/SabreFoxx/threejs-webpack-ts-boilerplate.git"
   },
   "keywords": [
-    "reloadly",
     "screensaver",
     "three.js"
   ],
   "author": "Gerald Nnebe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SabreFoxx/reloadly-snackman/issues"
+    "url": "https://github.com/SabreFoxx/threejs-webpack-ts-boilerplate/issues"
   },
-  "homepage": "https://github.com/SabreFoxx/reloadly-snackman#readme",
+  "homepage": "https://github.com/SabreFoxx/threejs-webpack-ts-boilerplate#readme",
   "dependencies": {
     "@abraham/reflection": "^0.12.0",
     "injection-js": "^2.4.0",
     "scss-reset": "^1.4.2",
     "stats.js": "^0.17.0",
-    "three": "^0.153.0"
+    "three": "^0.154.0"
   },
   "devDependencies": {
     "@types/three": "^0.152.1",
